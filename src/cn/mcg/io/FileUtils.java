@@ -5,7 +5,7 @@ import java.io.*;
 /**
  * Created by mao on 2017/8/9.
  */
-public class FileDemo {
+public class FileUtils {
 
     public static void readFileByBytes(String fileName) {
         // 一般先创建file对象

@@ -10,7 +10,6 @@ public class FileDirDemo {
     private static int depth=1;
 
     public static void find(String pathName,int depth) throws IOException{
-        int filecount=0;
         //获取pathName的File对象
         File dirFile = new File(pathName);
         //判断该文件或目录是否存在，不存在时在控制台输出提醒

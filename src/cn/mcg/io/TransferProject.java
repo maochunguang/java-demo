@@ -2,7 +2,6 @@ package cn.mcg.io;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Author: mac
@@ -29,6 +28,7 @@ public class TransferProject {
             if (file.isDirectory()) {
                 //递归
                 transferFile(file.getCanonicalPath(), currentDepth);
+                System.out.println(name + " has converted to utf8 ");
             } else {
                 if (name.contains(".java") || name.contains(".properties") || name.contains(".xml")) {
                     readAndWrite(file);
@@ -52,14 +52,8 @@ public class TransferProject {
     }
 
     private static void readAndWrite(File file) throws Exception {
-        List<String> str = FileDemo.readFileByEncode(file.getPath(), "GBK");
-        System.out.println(str);
-        StringBuffer sb = new StringBuffer();
-        for (int j = 0; j < str.size(); j++) {
-            sb.append(str.get(j));
-            sb.append("\r\n");
-        }
-        FileDemo.writeByBufferedReader(file.getPath(), new String(sb.toString().getBytes("UTF-8"), "UTF-8"));
+        String  content = FileUtils.readFileByEncode(file.getPath(), "GBK");
+        FileUtils.writeByBufferedReader(file.getPath(), new String(content.getBytes("UTF-8"), "UTF-8"));
     }
 
     public static void main(String[] args) throws Exception {
