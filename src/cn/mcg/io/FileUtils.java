@@ -1,6 +1,8 @@
 package cn.mcg.io;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by mao on 2017/8/9.
@@ -184,5 +186,16 @@ public class FileUtils {
 
         return sb.toString();
     }
-
+    public static List<String> readFile(String path, String chatSet) throws Exception {
+        InputStream input = new FileInputStream(path);
+        InputStreamReader in = new InputStreamReader(input, chatSet);
+        BufferedReader reader = new BufferedReader(in);
+        List<String> data = new ArrayList<>();
+        String line = reader.readLine();
+        while (line != null) {
+            data.add(line);
+            line = reader.readLine();
+        }
+        return data;
+    }
 }
