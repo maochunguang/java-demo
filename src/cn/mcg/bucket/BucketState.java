@@ -11,9 +11,9 @@ public class BucketState {
     public static final int[] BUCKET_INIT_STATE = {8, 0, 0};
     public static final int[] BUCKET_FINAL_STATE = {4, 4, 0};
     public static final int BUCKETS_COUNT = 3;
-    private WaterAction action;
-    private BucketState bucketState;
-    private int[] buckets;
+    private WaterAction action = new WaterAction();
+//    private BucketState bucketState = new BucketState();
+    private int[] buckets = new int[3];
 
     public BucketState() {
         setBuckets(BUCKET_INIT_STATE);
