@@ -1,5 +1,6 @@
-package cn.mcg.suanfa;
-import cn.mcg.suanfa.BinTreeTra.Node;
+package cn.mcg.datastruct;
+import cn.mcg.datastruct.BinTreeTra;
+import cn.mcg.datastruct.BinTreeTra.Node;
 /**
  * Author: mac
  * Date: 2017/7/20

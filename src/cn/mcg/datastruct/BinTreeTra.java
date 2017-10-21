@@ -1,4 +1,4 @@
-package cn.mcg.suanfa;
+package cn.mcg.datastruct;
 
 import java.util.LinkedList;
 import java.util.List;
