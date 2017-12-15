@@ -29,4 +29,13 @@ public class MonitorGC {
         allocation1 = new byte[4 * _1MB];//出现一次Minor GC
 
     }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 4; i++) {
+            if(i==1){
+                break;
+            }
+            System.out.println(i);
+        }
+    }
 }

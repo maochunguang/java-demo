@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
  */
 public class TwoThreadAlive extends Thread {
     private volatile static boolean flag = true;
+    @Override
     public void run() {
         while (flag){
             for (int i = 0; i < 2; i++) {
