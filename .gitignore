@@ -4,3 +4,4 @@ out/*
 .classpath
 .project
 java-demo.iml
+target/*
