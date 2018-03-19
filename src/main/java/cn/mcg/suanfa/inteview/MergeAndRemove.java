@@ -22,6 +22,33 @@ public class MergeAndRemove {
         int[] result = new int[a.length + b.length];
         int i = 0, j = 0, k = 0;
         while (i < a.length && j < b.length) {
+            if (a[i] < b[j]) {
+                result[k++] = a[i++];
+            } else if (a[i] > b[j]) {
+                result[k++] = b[j++];
+            } else {
+                j++;
+            }
+        }
+        while (i < a.length) {
+            result[k++] = a[i++];
+        }
+        while (j < b.length) {
+            result[k++] = b[j++];
+        }
+        System.out.println(Arrays.toString(result));
+    }
+
+    /**
+     * 合并，不去重
+     *
+     * @param a
+     * @param b
+     */
+    public static void merge(int[] a, int[] b) {
+        int[] result = new int[a.length + b.length];
+        int i = 0, j = 0, k = 0;
+        while (i < a.length && j < b.length) {
             if (a[i] <= b[j]) {
                 result[k++] = a[i++];
             } else {
@@ -37,6 +64,7 @@ public class MergeAndRemove {
         System.out.println(Arrays.toString(result));
     }
 
+
     /**
      * 给定多个有序数组，[1,2,3],[3,4,5],[7,8,9],输出为[1,2,3,4,5],[7,8,9]为连续的数组
      *
@@ -49,6 +77,7 @@ public class MergeAndRemove {
         int[] a = new int[]{2, 5, 7, 8, 9, 10};
         int[] b = new int[]{3, 6, 8, 9, 11};
         mergeAndRemoveRepeat(a, b);
+        merge(a, b);
 
         int[] arr = new int[]{2, 8, 1, 7, 4, 6, 9, 10, 11};
         mergeSort(arr, 0, arr.length - 1);
@@ -65,29 +94,55 @@ public class MergeAndRemove {
 
 
     public static void merge(int[] a, int low, int high, int mid) {
-        int[] temp = new int[a.length];
-        //复制到temp数组
-        for (int k = low; k <= high; k++) {
-            temp[k] = a[k];
-        }
-        int index = 0;
+        int[] tempArr = new int[a.length];
+        int index = low;
+        int temp = low;
         int middle = mid + 1;
         //合并到原数组
-        while (low < mid && middle < high) {
+        while (low <= mid && middle <=high) {
             if (a[low] <= a[middle]) {
-                temp[index++] = a[low++];
+                tempArr[index++] = a[low++];
             } else {
-                temp[index++] = a[middle++];
+                tempArr[index++] = a[middle++];
             }
         }
-        while (low < mid) {
-            temp[index++] = a[low++];
+        while (low <= mid) {
+            tempArr[index++] = a[low++];
         }
-        while (middle < high) {
-            temp[index++] = a[middle++];
+        while (middle <= high) {
+            tempArr[index++] = a[middle++];
         }
-        System.out.println(Arrays.toString(temp));
+        while (temp<=high){
+            a[temp] = tempArr[temp++];
+        }
+        System.out.println(Arrays.toString(a));
 
+    }
+
+    private static void merge1(int[] a, int left, int middle, int right) {
+        int[] tmpArr = new int[a.length];
+        int mid = middle+1; //右边的起始位置
+        int tmp = left;
+        int third = left;
+        while(left<=middle && mid<=right){
+            //从两个数组中选取较小的数放入中间数组
+            if(a[left]<=a[mid]){
+                tmpArr[third++] = a[left++];
+            }else{
+                tmpArr[third++] = a[mid++];
+            }
+        }
+        //将剩余的部分放入中间数组
+        while(left<=middle){
+            tmpArr[third++] = a[left++];
+        }
+        while(mid<=right){
+            tmpArr[third++] = a[mid++];
+        }
+        //将中间数组复制回原数组
+        while(tmp<=right){
+            a[tmp] = tmpArr[tmp++];
+        }
     }
 
 

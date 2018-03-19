@@ -23,7 +23,7 @@ public class MergeSort {
         for (int k = low; k <= high; k++) {
             aux[k] = a[k];
         }
-        // 合并回 a[]
+        // 合并回 a[],i代表左边数组下标，j带有右边数组下标
         int i = low, j = mid + 1;
         for (int k = low; k <= high; k++) {
             if (i > mid) {
