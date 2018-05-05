@@ -2,7 +2,10 @@ package cn.mcg.test;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Author: mac
@@ -21,9 +24,12 @@ public class ArrayTest {
         swap(a, 0, 2);
         System.out.print(Arrays.toString(a));
         System.out.print("hello world");
+
     }
     @Test
     public void testShortDefault(){
+        List<String> list = new ArrayList<>();
+        List<String> list1 = new LinkedList<>();
         Short id1 = new Short("0");
 
         id1 = new Short("");

@@ -1,9 +1,8 @@
 package cn.mcg.lock;
 
-import cn.mcg.suanfa.Main;
 import org.junit.Test;
 
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.locks.Lock;
 
 /**
  * @author maocg

@@ -1,5 +1,9 @@
 package cn.mcg.basics;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * @author maocg
  * 创建时间：2018/3/14
@@ -29,6 +33,13 @@ public class IntegerTest {
         Integer b3 = new Integer(10);
         System.out.println(a3==b3);
         System.out.println(a3.equals(b3));
+        List<String> list = new ArrayList<>();
 
+        for (int i=0;i<123;i++){
+            list.add(i+"");
+        }
+        Collections.sort(list);
+        System.out.println(list);
+//        HashMap
     }
 }

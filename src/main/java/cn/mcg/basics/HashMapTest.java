@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class HashMapTest {
     private static Map keyMap = new HashMap();
+
     public static void main(String[] args) {
         Map map = new HashMap<>();
         for (int i = 0; i < 10; i++) {
@@ -61,7 +62,22 @@ public class HashMapTest {
     public void testThreadsPutMap() {
         String test = "aaaa";
         String test1 = null;
-        System.out.println(test+test1);
+        System.out.println(test + test1);
+    }
+
+    @Test
+    public void forEachHashMap() {
+        Map<String, String> map = new HashMap<>();
+        map.put("aa", "111");
+        map.put("bb", "222");
+        map.put("cc", "333");
+        for (Map.Entry<String, String> m : map.entrySet()) {
+            String key = m.getKey();
+            String value = m.getValue();
+            System.out.println("key==" + key + " value==" + value);
+
+        }
+
     }
 }
 
