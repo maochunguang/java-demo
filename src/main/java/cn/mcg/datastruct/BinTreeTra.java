@@ -183,7 +183,7 @@ public class BinTreeTra {
         public static void postOrder_Stack(Node root){//后续遍历  
 
             Stack<Node> stack = new Stack<Node>();  
-            Stack<Node> output = new Stack<Node>();//构造一个中间栈来存储逆后续遍历的结果  
+            Stack<Node> output = new Stack<Node>();//构造一个中间栈来存储逆后续遍历的结果
             Node node = root;  
             while(node != null || stack.size()>0){  
                 if(node != null){  
