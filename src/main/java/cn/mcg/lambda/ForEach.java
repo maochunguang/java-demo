@@ -16,20 +16,18 @@ public class ForEach {
 
     @Test
     public void test3() {
-//        long start = System.currentTimeMillis();
-//
-//        List<String> names = new ArrayList<>();
-//        for (int i = 0; i < num; i++) {
-//            names.add("xiaoming" + i);
-//            names.add("laowang" + i);
-//        }
-//        List<String> toUpperCase = names.stream().
-//                map((String name) -> {
-//                    return name.toUpperCase();
-//                }).collect(Collectors.toList());
-//
-//        System.out.println(toUpperCase.size() + " " + toUpperCase.get(0));
-//        System.out.println("test cost3 ==" + (System.currentTimeMillis() - start));
+        long start = System.currentTimeMillis();
+
+        List<String> names = new ArrayList<>();
+        for (int i = 0; i < num; i++) {
+            names.add("xiaoming" + i);
+            names.add("laowang" + i);
+        }
+        List<String> toUpperCase = names.stream().
+                map((String name) -> name.toUpperCase()).collect(Collectors.toList());
+
+        System.out.println(toUpperCase.size() + " " + toUpperCase.get(0));
+        System.out.println("test cost3 ==" + (System.currentTimeMillis() - start));
 
     }
 
